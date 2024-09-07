@@ -47,5 +47,5 @@ print("O {} está {}".format(pessoa1.nome, pessoa1.imc_longo()))
 print("Quem eu sou? {}".format(pessoa1.apresentar()))
 
 
-idade_referencia = 10
+idade_referencia = int(input ("Digite a idade de uma segunda pessoa: "))
 print ("{} tem {} anos, a segunda pessoa tem {} anos, portanto, {} {}".format(pessoa1.nome, pessoa1.idade, idade_referencia, pessoa1.nome,   pessoa1.compara_idade(idade_referencia)))
