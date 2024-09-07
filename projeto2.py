@@ -33,19 +33,29 @@ class Pessoa:
     # Método Compara idade
     def compara_idade(self, idade2):
         if self.idade>idade2:
-            return "é mais velho"
+            return "é mais velho(a)"
         elif self.idade<idade2:
-            return "é mais novo"
+            return "é mais novo(a)"
         elif self.idade==idade2:
             return "tem a mesma idade"
 
+# Função mostrar dados
+def mostrarDados(pessoa):
+    print ("---------------------------------------------------------------------------------------")
+    print(pessoa.nome,"é maior de idade?", pessoa.eh_maior())
+    print("O IMC do {} é {:.2f}".format(pessoa.nome, pessoa.imc()))
+    print("O {} está {}".format(pessoa.nome, pessoa.imc_longo()))
+    print("Quem eu sou? {}".format(pessoa.apresentar()))
+    idade_referencia = int(input ("Digite a idade de uma segunda pessoa: "))
+    print ("{} tem {} anos, a segunda pessoa tem {} anos, portanto, {} {}".format(pessoa.nome, pessoa.idade, idade_referencia, pessoa.nome,   pessoa.compara_idade(idade_referencia)))
+    print ("---------------------------------------------------------------------------------------")
+
 pessoa1 = Pessoa("Zezinho", 15, 1.53, 68.2)
+mostrarDados(pessoa1)
 
-print(pessoa1.nome,"é maior de idade?", pessoa1.eh_maior())
-print("O IMC do {} é {:.2f}".format(pessoa1.nome, pessoa1.imc()))
-print("O {} está {}".format(pessoa1.nome, pessoa1.imc_longo()))
-print("Quem eu sou? {}".format(pessoa1.apresentar()))
+pessoa2 = Pessoa("João", 31, 1.73, 92.2)
+mostrarDados(pessoa2)
 
+pessoa3 = Pessoa("Maria", 26, 1.72, 70.8)
+mostrarDados(pessoa3)
 
-idade_referencia = int(input ("Digite a idade de uma segunda pessoa: "))
-print ("{} tem {} anos, a segunda pessoa tem {} anos, portanto, {} {}".format(pessoa1.nome, pessoa1.idade, idade_referencia, pessoa1.nome,   pessoa1.compara_idade(idade_referencia)))
